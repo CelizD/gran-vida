@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Hamburger from './Hamburger'
 import MobileDrawer from './MobileDrawer'
@@ -56,6 +57,7 @@ export default function Navbar() {
           style={{
             display: 'flex',
             gap: '2rem',
+            alignItems: 'center' // Añadido para que el nuevo botón se alinee perfecto
           }}
         >
           {NAV_LINKS.slice(0, 4).map((link) => (
@@ -74,6 +76,21 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          
+          {/* === NUEVO BOTÓN AL FORMULARIO DE PERROS === */}
+          <Link
+            to="/registro-terapia"
+            style={{
+              fontSize: '0.78rem',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: '#4E6E49', // Un verde un poco más fuerte para que destaque
+              fontWeight: 600, // Negrita para indicar que es un sistema oficial
+              transition: 'color 0.25s',
+            }}
+          >
+            Registro Perros
+          </Link>
         </nav>
 
         {/* Right actions */}
