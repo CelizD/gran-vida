@@ -1,46 +1,48 @@
 import FadeUp from '../components/FadeUp'
 import { IconArrow } from '../icons'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   return (
     <section
       style={{
         minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        padding: '9rem clamp(1.4rem, 8vw, 8rem) 5rem',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
         overflow: 'hidden',
-        textAlign: 'center',
-        background: `
-          radial-gradient(ellipse 55% 45% at 75% 25%, rgba(122,155,118,0.2) 0%, transparent 65%),
-          radial-gradient(ellipse 40% 35% at 15% 75%, rgba(196,113,74,0.13) 0%, transparent 60%),
-          #FDFAF5
-        `,
+        position: 'relative',
       }}
     >
-      {/* Ring decoration */}
+      {/* ── COLUMNA IZQUIERDA: TEXTO ── */}
       <div
         style={{
-          position: 'absolute',
-          width: 560,
-          height: 560,
-          borderRadius: '50%',
-          border: '1px solid rgba(122,155,118,0.15)',
-          top: -160,
-          right: -100,
-          pointerEvents: 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: 'clamp(5rem, 8vw, 8rem) clamp(2rem, 5vw, 5rem) 5rem',
+          background: '#FDFAF5',
+          position: 'relative',
+          zIndex: 1,
         }}
-      />
+      >
+        {/* Glow radial */}
+        <div style={{
+          position: 'absolute',
+          width: 500,
+          height: 500,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(78,110,73,0.1) 0%, transparent 70%)',
+          bottom: -150,
+          right: -150,
+          pointerEvents: 'none',
+        }} />
 
-      <div style={{ position: 'relative', maxWidth: 760 }}>
-        <FadeUp>
-          <span
-            style={{
+        <div style={{ position: 'relative', maxWidth: 560 }}>
+          <FadeUp>
+            <span style={{
               display: 'inline-block',
-              marginBottom: '1.6rem',
-              fontSize: '0.72rem',
+              marginBottom: '1.8rem',
+              fontSize: '0.7rem',
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
               color: '#C4714A',
@@ -48,92 +50,152 @@ export default function Hero() {
               padding: '0.35rem 1.2rem',
               border: '1px solid rgba(196,113,74,0.3)',
               borderRadius: 100,
-            }}
-          >
-            Nuestros servicios
-          </span>
-        </FadeUp>
+            }}>
+              Servicios Asistidos con Animales
+            </span>
+          </FadeUp>
 
-        <FadeUp delay={80}>
-          <h1
-            style={{
+          <FadeUp delay={80}>
+            <h1 style={{
               fontFamily: "'DM Serif Display', serif",
-              fontSize: 'clamp(3rem, 7vw, 5.8rem)',
-              lineHeight: 1.05,
+              fontSize: 'clamp(2.8rem, 5vw, 4.6rem)',
+              lineHeight: 1.06,
               color: '#1E2A1A',
               marginBottom: '1.6rem',
-            }}
-          >
-            El vínculo que{' '}
-            <em style={{ color: '#4E6E49', fontStyle: 'italic' }}>transforma</em>{' '}
-            vidas
-          </h1>
-        </FadeUp>
+            }}>
+              Integramos animales para{' '}
+              <em style={{ color: '#4E6E49', fontStyle: 'italic' }}>transformar</em>{' '}
+              vidas
+            </h1>
+          </FadeUp>
 
-        <FadeUp delay={160}>
-          <p
-            style={{
+          <FadeUp delay={150}>
+            <p style={{
               fontSize: '1.05rem',
               color: '#6B7A60',
-              maxWidth: 520,
-              margin: '0 auto 2.8rem',
-              lineHeight: 1.8,
-            }}
-          >
-            En Gran Vida creemos en el poder sanador de los animales. Cada servicio está diseñado
-            para mejorar el bienestar emocional y acercar a las personas a una vida más plena.
-          </p>
-        </FadeUp>
+              lineHeight: 1.85,
+              marginBottom: '2.8rem',
+              maxWidth: 480,
+            }}>
+              Promovemos la salud mental y creamos espacios de respeto, cuidado y convivencia
+              a través de servicios terapéuticos y comunitarios.
+            </p>
+          </FadeUp>
 
-        <FadeUp delay={220}>
-          <div
-            style={{
-              display: 'flex',
-              gap: '1rem',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-            }}
-          >
-            <a
-              href="https://wa.me/5216641291664"
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.7rem',
-                background: '#4E6E49',
-                color: '#fff',
-                padding: '1rem 2.4rem',
-                borderRadius: 100,
-                fontSize: '0.88rem',
-                fontWeight: 500,
-                letterSpacing: '0.06em',
-              }}
-            >
-              Solicita información <IconArrow />
-            </a>
-            <a
-              href="#servicios"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.7rem',
-                background: 'transparent',
-                color: '#4E6E49',
-                padding: '1rem 2.4rem',
-                borderRadius: 100,
-                fontSize: '0.88rem',
-                fontWeight: 500,
-                letterSpacing: '0.06em',
-                border: '1.5px solid #C2D6BF',
-              }}
-            >
-              Ver servicios
-            </a>
-          </div>
-        </FadeUp>
+          <FadeUp delay={210}>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <a
+                href="https://wa.me/5216641291664"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.7rem',
+                  background: '#4E6E49',
+                  color: '#fff',
+                  padding: '1rem 2.2rem',
+                  borderRadius: 100,
+                  fontSize: '0.88rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.05em',
+                  boxShadow: '0 8px 28px rgba(78,110,73,0.3)',
+                }}
+              >
+                Solicitar información <IconArrow />
+              </a>
+              <Link
+                to="/nosotros"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.7rem',
+                  background: 'transparent',
+                  color: '#4E6E49',
+                  padding: '1rem 2.2rem',
+                  borderRadius: 100,
+                  fontSize: '0.88rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.05em',
+                  border: '1.5px solid #C2D6BF',
+                }}
+              >
+                Conoce el equipo
+              </Link>
+            </div>
+          </FadeUp>
+
+          {/* Slogan bottom */}
+          <FadeUp delay={280}>
+            <p style={{
+              marginTop: '3.5rem',
+              fontSize: '0.78rem',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: '#9CAB8F',
+              paddingTop: '1.8rem',
+              borderTop: '1px solid rgba(78,110,73,0.12)',
+            }}>
+              Más humanos y más animales viviendo una Gran Vida
+            </p>
+          </FadeUp>
+        </div>
       </div>
+
+      {/* ── COLUMNA DERECHA: IMAGEN PRINCIPAL ── */}
+      <div
+        style={{
+          position: 'relative',
+          overflow: 'hidden',
+          minHeight: '100vh',
+        }}
+      >
+        <img
+          src="https://granvidaservicios.org/wp-content/uploads/2025/05/GRAN-VIDA-5-768x1024.jpeg"
+          alt="Gran Vida terapia con animales"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+          }}
+        />
+        {/* Overlay sutil */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to right, rgba(253,250,245,0.15) 0%, transparent 30%)',
+        }} />
+
+        {/* Badge flotante */}
+        <div style={{
+          position: 'absolute',
+          bottom: '2.5rem',
+          left: '2rem',
+          background: 'rgba(30,42,26,0.82)',
+          backdropFilter: 'blur(12px)',
+          borderRadius: 16,
+          padding: '1rem 1.4rem',
+          border: '1px solid rgba(255,255,255,0.08)',
+        }}>
+          <p style={{
+            fontFamily: "'DM Serif Display', serif",
+            fontSize: '1.1rem',
+            color: '#fff',
+            marginBottom: '0.2rem',
+          }}>A.C. legalmente constituida</p>
+          <p style={{ fontSize: '0.72rem', color: '#C2D6BF', letterSpacing: '0.05em' }}>RFC: GVS250609FY2 · Tijuana, B.C.</p>
+        </div>
+      </div>
+
+      {/* Responsive: en móvil la imagen va abajo */}
+      <style>{`
+        @media (max-width: 768px) {
+          section[data-hero] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }
